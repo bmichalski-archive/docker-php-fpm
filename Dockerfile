@@ -5,6 +5,7 @@ RUN \
   apt-get install -y \
     php5-fpm
 
+COPY conf/etc/php5/fpm /etc/php5/fpm
 COPY conf/root/configure.sh /root/configure.sh
 COPY conf/root/on-startup.sh /root/on-startup.sh
 
