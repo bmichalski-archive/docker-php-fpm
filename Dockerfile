@@ -2,6 +2,11 @@ FROM bmichalski/base
 
 RUN \
   base/configure.sh && \
+  locale-gen en_US.UTF-8 && \
+  export LANG=en_US.UTF-8 && \
+  apt-get install -y software-properties-common && \
+  add-apt-repository -y ppa:ondrej/php5-5.6 && \
+  apt-get update && \
   apt-get install -y \
     php5-fpm
 
