@@ -2,7 +2,9 @@
 
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
-bash $DIR/configure.sh
+touch /var/log/php5-fpm.log
+
+chown www-data:www-data /var/log/php5-fpm.log
 
 service php5-fpm start
 
